@@ -1,8 +1,10 @@
 package br.com.app.t_games;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,8 +15,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
+import static android.os.Build.VERSION_CODES.M;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    CardView mCardViewProcura, mCardViewMeusJogos, mCardViewConta, mCarViewTrocas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +38,15 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        mCardViewProcura = (CardView)findViewById(R.id.CVProcuraJogos);
+        mCardViewProcura.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(MainActivity.this, ProcurarJogosActivity.class);
+                startActivity(it);
+            }
+        });
     }
 
     @Override
@@ -89,4 +105,5 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }

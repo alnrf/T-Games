@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#5DC8E8"
+
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="br.com.app.t_games.MainActivity"
     tools:showIn="@layout/app_bar_main">
@@ -76,7 +76,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/meusjogos"/>
+                        android:src="@drawable/games"/>
                     <TextView
                         android:layout_marginBottom="16dp"
                         android:layout_gravity="center"
