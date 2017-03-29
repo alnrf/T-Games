@@ -1,9 +1,8 @@
 package br.com.app.t_games;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -15,8 +14,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
-import static android.os.Build.VERSION_CODES.M;
+import br.com.app.t_games.Activitys.MeusJogosActivity;
+import br.com.app.t_games.Activitys.ProcurarJogosActivity;
+import br.com.app.t_games.Activitys.UsuarioActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -44,6 +44,25 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(MainActivity.this, ProcurarJogosActivity.class);
+                startActivity(it);
+            }
+        });
+
+        mCardViewConta = (CardView)findViewById(R.id.CVMinhaConta);
+        mCardViewConta.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(MainActivity.this, UsuarioActivity.class);
+                startActivity(it);
+            }
+        });
+
+        mCardViewMeusJogos = (CardView)findViewById(R.id.CVMeusJogos);
+        mCardViewMeusJogos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(MainActivity.this, MeusJogosActivity.class);
                 startActivity(it);
             }
         });
@@ -87,17 +106,19 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_inicio) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_meus_jogos) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_trocas) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_avaliacoes) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_promocoes) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_lista_desejos) {
+
+        }else if (id == R.id.nav_configuracoes) {
 
         }
 

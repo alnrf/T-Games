@@ -3,33 +3,37 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_inicio"
+            android:icon="@android:drawable/ic_input_add"
+            android:title="Início" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_meus_jogos"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:title="Meus jogos" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_trocas"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:title="Trocas Disponiveis" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_avaliacoes"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="Avaliações" />
+        <item
+            android:id="@+id/nav_promocoes"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Promoções" />
+        <item
+            android:id="@+id/nav_lista_desejos"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="Lista de Desejos" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Configurações">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_configuracoes"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="configurações" />
         </menu>
     </item>
 

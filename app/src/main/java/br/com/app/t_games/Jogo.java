@@ -5,13 +5,13 @@ package br.com.app.t_games;
  */
 
 public class Jogo {
-    String nomeJogo;
-    int fabricante;
+    public String nomeJogo;
+    public String console;
     int capa;
 
-    public Jogo (String nomeJogo, int fabricante, int capa){
+    public Jogo (String nomeJogo, String console, int capa){
         this.nomeJogo = nomeJogo;
-        this.fabricante = fabricante;
+        this.console = console;
         this.capa = capa;
     }
 }

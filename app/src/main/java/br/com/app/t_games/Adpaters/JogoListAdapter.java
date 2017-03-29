@@ -1,28 +1,31 @@
-package br.com.app.t_games;
+package br.com.app.t_games.Adpaters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
+import br.com.app.t_games.Jogo;
+import br.com.app.t_games.R;
+
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
+
 /**
- * Created by Fabiano on 17/03/2017.
+ * Created by Fabiano on 29/03/2017.
  */
 
-public class JogoGridAdapter extends BaseAdapter {
+public class JogoListAdapter extends BaseAdapter {
 
     Context ctx;
     List<Jogo> jogos;
 
-    public JogoGridAdapter(Context ctx, List<Jogo> jogos){
+    public JogoListAdapter(Context ctx, List<Jogo> jogos){
         this.ctx = ctx;
         this.jogos = jogos;
     }
@@ -43,34 +46,34 @@ public class JogoGridAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position,View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
         Jogo jogo = jogos.get(position);
+
         ViewHolder holder = null;
+
         if(convertView == null){
-            convertView = LayoutInflater.from(ctx).inflate(R.layout.item_jogo_grid, null);
+            convertView = LayoutInflater.from(ctx).inflate(R.layout.lista_meus_jogos, null);
             holder = new ViewHolder();
-            holder.imgCapaJogo = (ImageView)convertView.findViewById(R.id.imgCapaJogo);
-            holder.txtNomeJogo = (TextView)convertView.findViewById(R.id.txtNomeJogo);
+            holder.capa_Jogo = (ImageView)convertView.findViewById(R.id.capa_Jogo);
+            holder.txt_nome_Console = (TextView)convertView.findViewById(R.id.nome_Console);
+            holder.txt_nome_Jogo = (TextView)convertView.findViewById(R.id.nome_Jogo);
             convertView.setTag(holder);
         }else{
             holder = (ViewHolder)convertView.getTag();
         }
 
         Resources res = ctx.getResources();
-        //imgCapaJogo.setImageDrawable();
-        holder.txtNomeJogo.setText(String.valueOf(jogo.nomeJogo));
 
-
+        holder.txt_nome_Jogo.setText(jogo.nomeJogo);
+        holder.txt_nome_Console.setText(jogo.console);
         return convertView;
     }
 
-
-
     public static class ViewHolder {
 
-        ImageView imgCapaJogo;
-        TextView txtNomeJogo;
+        ImageView capa_Jogo;
+        TextView txt_nome_Jogo;
+        TextView txt_nome_Console;
 
     }
-
 }

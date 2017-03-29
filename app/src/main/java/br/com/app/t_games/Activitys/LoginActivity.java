@@ -1,4 +1,4 @@
-package br.com.app.t_games;
+package br.com.app.t_games.Activitys;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import br.com.app.t_games.MainActivity;
+import br.com.app.t_games.R;
 
 import static android.R.string.ok;
 
