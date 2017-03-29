@@ -1,20 +1,16 @@
-package br.com.app.t_games.Adpaters;
+package br.com.app.t_games.Adapters;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.List;
-
 import br.com.app.t_games.Jogo;
 import br.com.app.t_games.R;
 
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 
 /**
  * Created by Fabiano on 29/03/2017.
@@ -61,8 +57,6 @@ public class JogoListAdapter extends BaseAdapter {
         }else{
             holder = (ViewHolder)convertView.getTag();
         }
-
-        Resources res = ctx.getResources();
 
         holder.txt_nome_Jogo.setText(jogo.nomeJogo);
         holder.txt_nome_Console.setText(jogo.console);
