@@ -1,12 +1,17 @@
 package br.com.app.t_games.Activitys;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 import br.com.app.t_games.R;
 
 
@@ -18,23 +23,23 @@ public class UsuarioActivity extends AppCompatActivity {
     EditText edtCidade;
     EditText edtEndereco;
     EditText edtSenha;
-    ImageButton btnEditar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario);
         spinner = (Spinner)findViewById(R.id.spnEstados);
-        btnEditar = (ImageButton)findViewById(R.id.btnEditar);
         configuraSpinner();
         desabilitaCampos();
-        btnEditar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                habilitarCampos();
-            }
-        });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu_cadastro, menu);
+
+        return super.onCreateOptionsMenu(menu);
     }
 
     private void configuraSpinner(){
@@ -44,6 +49,28 @@ public class UsuarioActivity extends AppCompatActivity {
         };
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, estados);
         spinner.setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.action_save:
+
+                desabilitaCampos();
+                Toast.makeText(UsuarioActivity.this, "Edição Bloqueada", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.action_edit:
+
+                habilitarCampos();
+                Toast.makeText(UsuarioActivity.this, "Edição Liberada", Toast.LENGTH_SHORT).show();
+                break;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
     }
 
     private void desabilitaCampos(){

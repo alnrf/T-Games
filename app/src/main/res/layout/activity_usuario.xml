@@ -115,18 +115,6 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_margin="16dp">
 
-                    <ImageButton android:id="@+id/btnEditar"
-                        android:src="@android:drawable/ic_menu_edit"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Editar"
-                        android:layout_marginRight="16dp"/>
-
-                    <ImageButton android:id="@+id/btnSalvar"
-                        android:src="@android:drawable/ic_menu_save"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Salvar"/>
                 </LinearLayout>
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>

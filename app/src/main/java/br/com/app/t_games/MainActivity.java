@@ -16,6 +16,7 @@ import android.view.MenuItem;
 
 import br.com.app.t_games.Activitys.MeusJogosActivity;
 import br.com.app.t_games.Activitys.ProcurarJogosActivity;
+import br.com.app.t_games.Activitys.Sobre;
 import br.com.app.t_games.Activitys.UsuarioActivity;
 
 public class MainActivity extends AppCompatActivity
@@ -93,7 +94,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_about) {
+            Intent intent = new Intent(this, Sobre.class);
+            this.startActivity(intent);
             return true;
         }
 
